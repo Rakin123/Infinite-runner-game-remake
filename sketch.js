@@ -191,7 +191,7 @@ function draw() {
 function reset(){
   gameState = PLAY;
 
-  fkground.x = trex.x ;
+  fkground.x = 200;
   
   
   obstaclesGroup.destroyEach();
