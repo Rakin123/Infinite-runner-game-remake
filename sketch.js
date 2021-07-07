@@ -56,7 +56,7 @@ function setup() {
   //ground.addImage("ground",groundImage);
   
 
-  fkground = createSprite(200,189.5,1000,20)
+  fkground = createSprite(200,189.5,1400,20)
   fkground.x = fkground.width/2;
   fkground.shapeColor = "green";
   fkground.x = fkground.width /2;
@@ -115,7 +115,7 @@ function draw() {
     if (fkground.x < 0){
       fkground.x = fkground.width/2;
     }
-    fkground.x = trex.x + 250;
+    fkground.x = trex.x;
     
     fkground.velocityX = (4 + 3* score/100)
     
@@ -191,7 +191,7 @@ function draw() {
 function reset(){
   gameState = PLAY;
 
-  fkground.x = trex.x + 250;
+  fkground.x = trex.x ;
   
   
   obstaclesGroup.destroyEach();
