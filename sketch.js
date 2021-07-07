@@ -115,7 +115,7 @@ function draw() {
       ground.x = ground.width/2;
     }
 
-    fkground.velocityX = 4
+    fkground.velocityX = (4 + 3* score/100)
     
     //jump when the space key is pressed
     if(keyDown("space")&& trex.collide(invisibleGround)) {
@@ -244,12 +244,13 @@ function inv() {
 
 function spawnClouds() {
   //write code here to spawn the clouds
-  if (frameCount % 60 === 0) {
+  if (frameCount % 50 === 0) {
     var cloud = createSprite(600,120,40,10);
+    cloud.x = trex.x + 550
     cloud.y = Math.round(random(80,120));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
-    cloud.velocityX = -2;
+    cloud.velocityX = 0;
 
     
      //assign lifetime to the variable
