@@ -182,12 +182,17 @@ function draw() {
   
   //cordinates for the x and y position
   fill("black");
-  text(mouseX+","+mouseY,mouseX,mouseY);
+  //text(mouseX+","+mouseY,mouseX,mouseY);
 }
 
 // When restart button is clicked
 function reset(){
   gameState = PLAY;
+
+  fkground.x = 200;
+  fkground.y = 189.5;
+  fkground.width = 1000;
+  fkground.height = 40;
   
   obstaclesGroup.destroyEach();
   cloudsGroup.destroyEach();
