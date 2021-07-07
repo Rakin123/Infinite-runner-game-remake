@@ -54,11 +54,12 @@ function setup() {
   // Create ground
   ground = createSprite(200,500,400,20);
   //ground.addImage("ground",groundImage);
-  ground.x = ground.width /2;
+  
 
   fkground = createSprite(200,189.5,1000,20)
   fkground.x = fkground.width/2;
   fkground.shapeColor = "green";
+  fkground.x = fkground.width /2;
   
   
   gameOver = createSprite(300,100);
@@ -111,10 +112,11 @@ function draw() {
        checkPointSound.play() 
     }
     
-    if (ground.x < 0){
-      ground.x = ground.width/2;
+    if (fkground.x < 0){
+      fkground.x = fkground.width/2;
     }
-
+    fkground.x = trex.x + 250;
+    
     fkground.velocityX = (4 + 3* score/100)
     
     //jump when the space key is pressed
@@ -189,10 +191,8 @@ function draw() {
 function reset(){
   gameState = PLAY;
 
-  fkground.x = 200;
-  fkground.y = 189.5;
-  fkground.width = 1000;
-  fkground.height = 40;
+  fkground.x = trex.x + 250;
+  
   
   obstaclesGroup.destroyEach();
   cloudsGroup.destroyEach();
